@@ -2,5 +2,5 @@
   publish = "public"
   command = "git submodule init && git submodule update && hugo"
 
-[context.deploy-preview.environment]
+[context.production.environment]
   HUGO_VERSION = "0.25"
