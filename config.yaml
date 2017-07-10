@@ -1,0 +1,39 @@
+baseURL: http://www.nettreo.com
+disablePathToLower: true
+languageCode: en-us
+title: Improving software by focusing on better feedback
+theme: "hugo-type-theme"
+disqusShortname: "improvingsoftwarebyfocusingonbetterfeedback"
+
+params:
+  author:
+    name: "Theo Andersen Carton"
+    email: andersen.theo@gmail.com
+  description: "Developing and architecting in Copenhagen"
+  gravatar: "andersen.theo@gmail.com"
+  copyright: "The content on this site is licensed as <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0/\">CC Attribution-ShareAlike</a> except for code samples, which are licensed as <a rel=\"license\" href=\"http://creativecommons.org/publicdomain/zero/1.0/\">CC0</a>."
+
+  
+  social:
+    # Insert your accout name and the icon will be shown in the right menu
+    rss: true
+    email: "andersen.theo@gmail.com"
+    github: "TheoAndersen"
+    twitter: "TheoAndersen"
+    behance: ""
+    bitbucket: ""
+    dribbble: ""
+    facebook: ""
+    flickr: ""
+    googleplus: ""
+    instagram: ""
+    linkedin: ""
+    pinterest: ""
+    reddit: ""
+    soundcloud: ""
+    stackexchange: ""
+    steam: ""
+    tumblr: ""
+    wordpress: ""
+    youtube: ""
+

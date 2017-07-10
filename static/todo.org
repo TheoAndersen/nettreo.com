@@ -1,0 +1,597 @@
+* TODO
+** DONE Tilføj en overskrift (hvad skal den hedde?)
+** DONE Tilføje en kort tekst over blog-postsne
+** DONE Tilføj Disguis kommentarer til bloggen
+https://help.disqus.com/customer/portal/articles/472138-jekyll-installation-instructions
+** Skriv de første indlæg
+** Stavekontrol i emacs?
+** Svar
+
+I'm going to try once a week (pwew). and will size the blogposts for what will take me 1-2 hours to write. or timeboxed to two evenings of spare time writing when the kids are sleeping :)
+
+I have a few todo's i feel i need to do on my blog, but im thinking of postponing scheduling them to do one of them every month, or im afraid ill never get to blogging :)
+ITs things like
+- adding disquis commenting
+- adding tags
+- adding another domain name which fits better with my theme of "Improving software by enhancing feedback"
+
+** Share new posts on
+Linkedin
+Twitter
+Reddit (find den rigtige subreddit)
+* Schedule - once a week --- pwew thats much.
+
+-once a week
+-once a month i upgrade my blog
+
+Så en blogpost skal tage max 1-2 timer at skrive
+Jeg må bruge to aftener på det.
+Forhåbentlig kan jeg komme ned på at bruge kun en :S
+
+* Theme?
+- Feedback
+- Program faster with better feedback
+- Gimme feedback...
+- meep meep.. feedback
+* Remember
+=to serve the server=
+jekyll serve
+
+
+
+* Idea for showing a refactoring in a blog post
+Make a sort of code-field, where you have arrows on the side, with explaining text underneith and can switch left or right to show the refactorings of the code
+
+  ---------------
+< |             | >
+< |  <code>     | >
+  _______________
+ (explaining text)
+
+- Maybe make it possible to use arrow keys to switch left and right in the refactoring
+- Make the refactored changes bold
+- Maybe tabs with different files, or just keep them above each other
+- Some easy way of keeping the whole refactoring in a file.. uhmm.. maybe a small git repo? (perhaps not portable enough)
+
+* Idea's for posts regarding the loose topic 'feedback'
+Måske sortere rækken fra det der passer bedst med emnet og så nedaad??
+
+The toughest part of development, isnt developing the software - its figuring out if the thing you build does it right.. tja.
+Areas:
+- Testing, TDD
+- Builds
+- Meta (about feedback)
+-
+** Architecture is a misused contradicting name
+Noget om hvad jeg ser 'arkitektur' navnet egentlig er i software verden.
+
+Det er både en rolle, og en disciplin (meget ligesom devops)
+
+Rolle - både benyttet rigtigt, og bare som et ekstra flag om ansvar
+
+Disciplin - alle der tager valg laver arkitektur.. 
+
+
+For at lave arkitektur skal man kunne vælge mellem muligheder og evaluere
+
+Den nemme del er at afgøre med sig selv hvad man synes er bedst i en given situtation
+
+... det svære er at overtale alle andre stakeholders, til at dette er det rigtige valg :)
+** Evaluating possibilities / Dont be mislead by the first slope of the gartner curve
+HVad gør man når man vælger noget
+
+Hvad er en arkitektur evaluering.
+
+KEnd fordele og ulemper..
+
+Disse har også en kontekst
+** Fast design feedback technique - live reloading
+** ------ newer ideas above this live (its been a while) ------
+** I found a use for regions in c# (which i normally love to hate)
+- =REgions antipattern=
+  - REgions are mostly seen used to wrap a classes property in public, private, protected evt.. and thats just annoying.. 
+    I know c# enough to distinquish these quicly, and normally a public method can be followed along with private methods,
+    so grouping them apart just makes it more difficult to find
+    
+  - Other uses are normally an anti-pattern for something you would rather want seperated into a seperate method (it ifs a region inside a method), or into a new class
+
+- =Use regions as an easy intermediary/helping tool=, for dividing up your code into parts that can then be seperated into classes/method
+- =Use regions in big tests=, to group test-code, and make sure private methods are close to where they are being used
+  --> give the regions good names, that explain what this group of tests are trying to test (larger scope test names)
+  --> and try if you can to extract the regions into a seperate test class
+  --> In what I'm working on right now I'm actually halting a bit on the extract, as every class/filename i can find is less expressive than the long region name i have come up with (#region "When importing like _A_, we should be following the rules set in part B and C")  - try making that one a class :S
+
+- =When moving code, use the 'references' helper tool on top of every method in the newer vs versions.. it gives a quick hint on where that method syhould be in the class=
+  
+** DOING Different ways to think about testing your system
+** Working with nulls in different languages
+- Java and C-Sharp.. woops, the thing you were looking for aint there
+- Objective-c... sshh.. its propably allright.. just return null
+- Elm... nothings ever null by coincidence
+
+https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare
+
+Vend den om så det handler om de forskellige approachs, som så underbygges af at det faktisk er dette sprog der gør det.. osv..
+
+
+Elm example: 
+
+
+import Html exposing (..)
+
+
+findTingJegSkalSkrive =
+  "tet"
+
+main =
+  text (
+    case findTingJegSkalSkrive of
+      Just text -> text
+      _ -> "dunno")
+
+
+
+--findTingJegSkalSkrive : Maybe String
+--findTingJegSkalSkrive
+-- = Nothing
+
+
+
+--main =
+--  text (
+--    case findTingJegSkalSkrive of
+--      Just text -> text
+--      _ -> "dunno")
+
+** Programming in emacs
+** Your architecture should show the domain
+
+-> Uncle bobs talk about this
+
+-> Commands instead of services with many business methods
+** (need to know more) The "but why?" of functional programming
+
+*** Whats wrong with our present imperative object oriented languages?
+**** There are too many ways to make errors in imperative programming languages
+
+_too many ways to make errors_
+
+To many ways to fail - The tools can be improved..
+
+- look at crockford's "Javascript the good parts" (reference the podcast)
+- The little story about JavaScript
+
+My own doubts about async/await.. it will make it much easier to introduce difficult errors
+
+_most people don't program object oriented in their object oriented language_
+
+Object Oriented programming is not easy (link to that OO pun post)
+Most don't know how to develop object oriented, and just rely on 
+
+_to do it right, is very laboursome/cumbersome_
+- Dependency Injection
+- Testability
+
+**** Many can't figure out how to program in an object oriented style
+**** Programning object-oriented makes for a lot of plumming code
+**** Object-oriented languages are bad at modelling concurrent programs (hard to work with)
+**** Functional programming seems all over the place, to be honest
+
+What was good about the other languages, was that they look a lot a like.
+Java and c#? please... python... etc..
+
+**** "The good parts" of a programming language
+
+**** Hey we have higher order functions in XYZ, its functional
+
+Well in some languages, you can do functional'ish style of programming.. but it gets cumbersome really quickly (see the pattern here?)
+
+*** Whats a definition of a functional language?
+
+- Ham der snakker om at det handler om at være ond ved side-effects...
+
+  - Men han taler så ikke så meget om hvad man så gør ved dem.. de er der jo et sted
+
+Is almost that its not based on classes... 
+First requirement is that you don't base your structure on classes.
+You base them on functions, and the datastructures the functions work on.
+
+What about 'encapsulation`?
+
+Well actually typically encapsulation is really hard to do, and normally OO dosen't really do it right.. typically i see leaky encapsulations. 
+
+In functional programming you focus on solving the problem, not on wrapping it up in boxes..
+
+*** Functinal programming often has more advanced functions/operators and other stuff
+*** What are some problems then with functional programming languages?
+**** Its a different paradigm - Object oriented developers will find the shift difficult to begin with
+
+*** There is a lot of community working on functional languages right now
+Introduktion til at kunne tale om de funktionelle sprog jeg har kigget på
+- Erlang/Elixir
+- Elm
+- F# vil jeg gerne kigge på
+
+** TODO Stategies for handling sideffects in code
+*** Why write about this -> read Krisajenkins great posts about what functional languages and sideffects
+*** But what strategies can we then use with sideeffects?
+**** No sideeffects at all - push the sideffect out of the current function and pass the data in (now its somebody elses problem...)
+"thats a problem for future me"
+Reasoning about that complicated business are dosen't get easier if its got time and other random data sideffects mixed into it.
+It's actually much easier if you know that the code hasn'nt got any sideeffects, and you can just test it as you please.
+**** Api your dependencies/sideffects, so they are easier to handle and get around
+**** Choose better sideffects - some are way worse than others
+*** Choose the right test-scope
+*** What has this to do with functional languages?
+Wouldn't all this be easier, if you had a harder time doing it wrong in the language you were using?
+
+This is what functional languages typically do
+** Elixir what is that?
+** Testing strategies
+Noget om hvornår jeg tester hvad, og hvornår jeg bruger TDD.
+
+Ionic app.. javascript i ios hybrid.. fint nok.
+
+Først
+
+Prototype mode.. få noget ud.. spike det egentlig.. gider ikke test.. bare få det til at virke.. (ingen tests)
+
+Nu har jeg noget der virker.. hmm.. nu begynder jeg at rode lidt mere at teste det..
+
+lad os sætte end-2-end tests op.. i hybrid så vi kan benytte os at selenium.. eller noget der wrapper uden om.
+
+fint det er oppe også på build serveren.. og vi har nogle accept tests som tager de grove tests. 
+ - men som eneste anke er at de ikke tager de native ting med (kun web) og heller ikke tager eksterne afhængigheder med.. stubber dem)
+ - det kan godt være vi skal have noget mere rigtig accept test på et tidspunt, hvis det her gør lidt for ondt.. men jeg gider ikke sætte det op nu
+
+videre med udviklinge.. fint fint.. koder.. 
+hov.. jeg skal bruge lidt mere dato-ræs.. det er javascript godt nok ikke særlig god til.. hmm besværligt...
+hmm.. ej det her kommer jeg til at rode rundt i... det er lidt tricky.. kunne godt bruge en unit test nu.. end-2-end testsne er for store.. for besværlige.
+
+hmm okay .. nu sætter jeg unit tests op til det her.. men det er kun fordi lige det her er lidt besværligt.. mht. modellen og regne tider frem.
+Det bliver nok også brugbart når man skal lave lidt konvertering fra noget indkommmende data ind til min model, da der nok også bliver lige lidt tricky der.
+
+
+----
+
+og så noget opsamlende om de tanker der lægger bag de her tanker..
+** Did i just create an elixir singleton by accident?
+Using the module name in every function to a genserver, makes it a singleton effectively.
+
+Now this might be allright in an application, but not when testing it.. How do i get around this when testing?
+** Elm what is that?
+** Always using the model at hand
+I mange sprog er der et genoptrædende pattern, om at det er en fordel at konvertere indkoment data til programmeringssprogets egen model, og så arbejde derudfra.
+ 
+
+I C# og Java, handler det om at konvertere det indkomne til Poco og pojo’er, og ikke bare afhænge af primitive datatyper, som at det hele ligger i en json i en string eller lignende. Dictionary.. osv..
+ 
+
+I Elm, handler det om at parse alt indkomment til Elm’s egene datatyper hvilket gøres med json parsere
+ 
+
+I Elixir handler det om at konvertere det indkomne til elixirs egne typer, elixir er ikke stærkt typet, så her er elixirs egne typer structs (eller dicts). Men det er så det første man gør, at parse fx indkomment json til structs, og så kan man arbejde videre derfra.
+ 
+
+Lad være med at blande forretningslogikken ind i det her parsning heller, så blander to pærer og banener sammen, og det kan være svært at hitte rundt i om det er parsningen eller forretningslogikken hvor noget sker, fejler osv..
+ 
+
+I javascript er en af (de få) fordele, at json er javascripts eget format. Dvs hvis man sender javascript noget json, er det rigtig let at få det til dens egen datatype… det sker næsten automatisk… Det er tilgengæld overhoved ikke stærkt typed, men det er nemt at have med at gøre.
+ 
+
+Måske et simpelt eksempel på det samme i alle disse sprog.
+** F# what is that?
+** ** Think of syncronous connections as the most expensive in your architecture
+
+** ------ most important above this line ------
+** Using variables versus functions.. variables makes it more difficult..
+** Test - automated tests should create their own testdata
+** Scrum - physical board vs an online board
+** Tecnical tester.. testers need to know about automated tests -- all the roles are getting automated
+When ever i hear people talk about testers these days, i hear them talk about needing testers which have decent technocal side as well. 
+
+It seems everything is getting naturally more and more automated..
+
+This fits together with the devops movement which merges operations and development in what normally is more 
+** Feedback - feedback in development. What and why
+** Feedback - Feedback on business ideas
+** Understanding how organizations affect IT decisions
+Det fra Målarkitekturerne, om at forstå at der er mange kræfter der påvirker IT.
+
+IT er ikke kun teknik.. langt fra.. selvom vi gerne bare vil generalisere det til det.
+
+IT skal understøtte forretninge, dvs. du kan ikke lave IT uden at forstå forretningen.
+
+Men hvorfor generaliserer vi så IT til standard-systemer og 3-lags modeller?
+
+Eksempel fra Louis - om at der altid er en afdeling som tjener flest penge,
+og som så får lov til at gå uden om hele firma-processen.
+Men det skal man jo bare forstå og vide. Det er okay hvis der er taget stilling til det.
+At det er et bevidst valg at man forstår de konsekvenser og merarbejde det kan give
+andre steder i biksen.
+*
+** Familieliv og ambitioner
+** TODO Feedback - Bad or slow feedback is extremely expensive
+Tag eksempler fra forskellige folk
+
+Kent Beck - TDD... a feedback technique
+Gojko adzic - Impact mapping - "Delivering business goals, not just software features" www.impactmapping.com
+          -> Dan North..
+
+- Continous Delivery :: being able to release really quickly, to generate feedback as early as possible
+- Impact Mapping :: being able to measure the impact feedback, and map it to what were doing.. is it working?
+
+> Intro - Elaborate on this blogs purpose on development feedback
+
+> The why - Most methodologies and many problems center around feedback.
+
+> What can we do?
+  - Use the methods for what they're supposed to do (TDD as a feedback technique)
+  - Focus on improving the right kind of feedback, nomatter where you are in the tool chain
+    - Program manager / Business analyst -> Are the customer getting the right feedback?
+    - Scrum master -> Are the team getting the right feedback
+    - Team member -> Am i getting the right feedback
+n
+ Microservices
+ - 
+
+ 
+
+>  Realize that many software methodologies are centered on improving feedback, and that many problems are centered
+Agile.
+> How long does it take to fix an error?
+Man kan godt tro at det man laver for at rette en fejl er at kode rettelsen, men 90% går på at forstå og finde fejlen og derfra finde den rigtige måde at rette den på.. hvorefter at kunne teste den og bekræfte at det virker
+
+- Det er fedt at kunne lave en test først, sådan at man har bekræftelsen når man har rettet den
+> Decent test feedback
+*** 
+** [Async] 
+** You need to code everything asyncronously and pure by default
+
+
+** Server less architecture
+** Architecture assignment, where asyncronous links are valued cheaper than synchronous
+** Builds - quick builds
+** Elm - elm and feedback versus JavaScript and feedback
+** Test - larger test scopes
+** Test - testing private members. Are you nuts?
+** VCS - gated/pull requests - you should know that you can't break anything when committing
+** Feedback know what delays you in a day
+** Languages - our programming languages are obsolete (we need dependency injection etc etc)
+** General - tech choices are about the business
+** Architecture - how you structure the files of your app (based on the business)
+** ObjectOriented - how we should be coding OO
+** VCS - better git commit messages
+** Functional - writing functional JavaScript ala Douglas Crockford
+** Languages - d. Crockford. Bad parts of a language 
+** Architecture - evolutionary architecture
+** Feedback - feedback in engineering (construction) spørg Louis
+** Builds - continuous delivery is about feedback
+** Feedback - academic material about feedback 
+** continuous delivery the Klaus way (code it while the customer is waiting in the same room)
+** feedback and responsibility (give people the responsibility and feedback)
+** code as a crime scene as feedback/vcs feedback
+** micro services makes good feedback easier in some aspects and harder with others
+** Frontend - Codebehind -> JQuery -> Angular -> React -> ELM
+
+** Elm - declarative frontend programming
+** SOA - 'Svartider' and turning the bucket around                                                                                     
+Om hvordan svartider må være aggregerede, sa services kan kalde services
+
++ om hvordan man så ændrer dette mønster, til det omvendte 
+** SOA - Microservices og asyncronous communication
+** SOA - Microservices size is about the business.. such a bad name..
+** VCS - Why i really don't like TFS but prefer Git
+Being a professional .NET developer i've used TFS pretty much since the sourcesafe days (along with the occational svn). I've though used git alot on side project and at home. If your only familiar with TFS and perhaps svn, you have no idea what your missing out on, and you might be hurting alot in areas as branching more than you have to.
+
+I currently work on a project with many branches and many developers in TFS and am expeciencing alot of hurt that i think would be less painfull if we were using tools as git instead. I actually thing that a lot of the bad rep branching and merging has it because of the pain cause when using tools that's got in hacked in - such as TFS.
+
+*** The difference in structure between branches in git and tfs
+Whats possible in different versioning systems and how one uses them has everyting to do with the structure they use - this is also true about their support for branching.
+
+Git is one graph (paths can divide and converge) of changes originating from one first commit. A branch is a pointer to one place in this graph
+
+In TFS changes is oneway linear, except when branching. A branch is a copy in another folder location which has its own linear history, but you can merge (soft of copy) content from one to another.
+
+**** A merge is always a squash in TFS, as opposed to git
+(because we copy all content thats missing in one branch to the other one and put then in a new commit (marking them as Merged (meaning no change), merge edit.. etc.
+
+In git a merge is joining divided paths into one - meaning thats its no copy of code from a branch to another - actually the commit has changed content it self if there was no conflicts in the merge, why should there? All the info of the two branches is in the diverted paths before the merge.
+*** Points that i can do in TFS, can i do them in git? how
+*** Points i can in git but cant in TFS
+*** How do i identify code versions that has been changed the most.. (files at first)
+*** Finding merge errors across branches is painfully difficult in TFS
+*** You can get Merge errors if you forget to get-latest before merging
+
+More about Microsofts comparisons of Git vs TFS
+(much of it is based on Microsofts use of git - not git it self)
+http://msdn.microsoft.com/en-us/library/ms181368.aspx#tfvc_or_git_summary
+
+*** Git vs TFS
+|-----------------+---------------+---------------------------------------|
+|                 | =GIT=         | =TFS=                                 |
+|-----------------+---------------+---------------------------------------|
+| Branching       | project-based | folder-based                          |
+|-----------------+---------------+---------------------------------------|
+| local branches  | Yes           | No                                    |
+|-----------------+---------------+---------------------------------------|
+| Most operations | works locally | only when connected to the TFS server |
+|-----------------+---------------+---------------------------------------|
+| VCS model       | Distributed   | Centralized                           |
+|-----------------+---------------+---------------------------------------|
+|                 |               |                                       |
+
+*** Points to investigate
+**** A TFS Merge squashes commits to one new one created in the new branch
+**** Annotate/Blame
+**** Rollback one or multiple items
+**** Cherry pick commits when merging
+**** "Baseless" merges (is there such a thing in git at all - dosen't it just work?)
+**** (new) Ability to easily go forward/backwards with versioning of a file (+ keep position)
+** VCS - Microcommitting
+** VCS - Issues with converting big centralized projects
+** VCS - Structuring git repositories
+As of now the world has pretty much moved to git. A few places as my company, people are still using subversion or TFS, and some of these are considering moving to git. My company is one of these, and we have had a few introductory meeting for finding out what it would take to to our pretty big TFS setup to git. Being that i have worked a fair bit with git on everything else than work for the past years i know how git works and should be structured, but it can be hard to understand if you are from a purely centralised VCS background as Svn or TFS as these simply dosent structure code as git does.
+
+Branches aren't in seperate folders
+---
+In git branches are a concept 
+
+Typical SVN structure
+- Tags
+  \- Release 1.0
+   - Releate 1.1
+- Trunk
+- Branches
+  \- Feature X
+  \- Spike y
+
+** Scrum - Running Scrum by the book - Noget om hvorfor jeg tit er irritereet på scrum ("Vi kører scrum efter bogen")              
+** Customers - Keep your eye on the ball - Value proposition anyone?                                                               
+** Customers - If you don't stand up to your customers, you're gonna loose them                                                    
+** Scrum - Agile and Flaccid scrum                                                                                                 
+** Scrum - Scrum and self organizing team...                                                                                       
+Vi starter den anden vej, og arbejder os mod det mere selvorganiserende team
+
+Men nu når jeg læser scrum bogen, synes jeg slet ikke han snakker om det selvorganiserende team på den samme måde...
+
+** Design - The fear of creating new classes                                                                                    
+Hvorfor faen virker det somom at udviklere ikke bryde sig om at lave nye klasser?
+- Er det objekter de ikke kan lide?
+- Er det filer?
+- Er det fordi de føler at man skal vide mere om systemet for at lave klasser istedet for nye metoder?
+
+De fleste kan aller bedst lide bare at lave en ny funktion i samme dur som noget eksisterende.
+Det kan gøre at man ender med antipatterns som er fulde af få meget store og meget statiske filer, hvilket er svært at håndtere, udvide samt teste, samt versionere,
+fordi man oftere ændrer i de samme filer.
+
+_Reasons for creating a new class_
+
+** Design - The Helper anti-pattern (utility pattern)                                                                           
+ - _Helper files_
+   A file thats called helper, and includes a lot of different
+
+it's all about context.. a file of any type, with methods that dosen't align up with the purpose of the class is a problem, it becomes a problem and a trashcan for all kinds of functionality.
+
+Sources:
+http://scottboring.com/the-helper-anti-pattern/
+http://blogs.msdn.com/b/nickmalik/archive/2005/09/06/461404.aspx
+http://blogs.msdn.com/b/nickmalik/archive/2005/09/07/462054.aspx
+
+** Design - The Layer anti-pattern                                                                                              
+ - _Files that end with the name layer (OrderBLL.cs, OrderLayer.cs)_
+   A layer in your app shouln't be constricted to a single file -
+     -It makes the overall behavious of your application hidden from the directory structure, as all you can see is that its about the order
+     -Makes dependencies a mess, as every method either has to generate/fetch its dependencies by it self in the function, or you have to generalize dependencies across in the constructor
+     -Basically makes people not want to create private methods, as they will get kind of lost in the file (does this private method belong to this public class or another?)
+   Possible solutions: Use a command like pattern structure, where your layer is a directory if you will, and a class consists of a business command/transaction that can be executed
+
+Business command
+
+Uncle bobs business command
+** Design - The builder pattern                                                                                                 
+** Design - Internal classes - its not all evil                                                                                 
+Theyr not all evil.. Can actually be usefull
+
+example: RavenDB Index'es and Model an index works on
+
+Command pattern.. request response as internal classes
+
+** Design - Your logging is a missing abstraction (using events)                                                                
+** TDD - Controlling your steps using TDD                                                                       
+Explain the steps again
+but include help from James Shore and Kent Beck
+
+Explain why it should be like this?
+
+1) Create a test - invent the API of your choice
+   It might go red
+   Or it might not compile
+
+2) Make it compile and get green fast
+   Don't do it the nice way - hard code.. commit the sins you want to get green (get green as fast as you can)
+
+3) Refactor it to remove duplication, make it more general. nicer (take your time)
+   Keep the green but remove the duplication (also between testcase and code)
+
+Reasons that this is beneficial:
+- You always work on known working code, this means that you keep focused, and less often get side-tracked on something that doesn't work.
+- It also keep the bits you code small, which makes it easier to comprehend
+- using tests enables refactoring (everytime you refactor uncovered territory you screw something up - trust me..)
+- Doing this you will find your self refactoring way more than you used too, and you will have more 'headroom' to concentrate on the design
+- Its easier to concentrate on the design when you don't have to worry about making errors at the same time
+- You can vary the step-size, based on your confidence in what your coding. (larger steps if your confident, more support with smaller steps if your not)
+** Design - practice your way to better Object-oriented skills                                                                  
+**  Languages - Exercises to learn a new language                                                                                      
+Unit test framework (Kent Beck)
+Bowling kata
+Markdown parser (Dave Thomas)
+
+** Erlang - The basic structure of Erlang                                                                                
+CLOSED: [2016-01-02 Sat 20:30]
+In #erlang you structure code in modules containing functions. But the work is done in processes which can use functions in many modules.
+
+Processes can communicate though message passing, and a process has a messagebox and can decide which messages to recieve/read.
+
+A Module exports the functions that are public.
+These are used by processes. Two kinds of processes normally
+1) The process which the module represents (to start a server fx.)
+2) The clients of this server, because you encapsulate the functions that makes it able to send messages to the server
+
+StartServer
+ -> Starts a recieve loop which does something to the recieved messages
+
+AskServerA
+ -> Sends message A to the server
+
+AskServerB
+ -> Sends message B to the server
+** Languages - Naming preferences in object oriented and functional programming                                                 
+Navngivning er en kæmpe del af kodning - ellers forstår man ikke en pind af hvad der er lavet.
+God kode virker ikke kun for dig selv, men også for andre er skal læse det.
+Det smame med opbygningen - især i objekt orienteret programmering
+
+i funktionelle sprog er tendensen lidt at man kan skrive ting meget mere kompakt end i objekt oriterede prog.
+Herved virker det også somom at programmører har en tendens til at forkorte meget mere, og det bliver utrolig indforstået
+hvad der sker
+
+=Theo:= /Whats with the terrible shortened names #erlang folk? Just because it's smaller doesn't mean its easier to understand #learnerlang/
+=‏@sinasamavati= /@TheoAndersen I prefer short descriptive names rather than a sentence as a name. @joescii has a nice post about it:/ http://proseand.co.nz/2014/07/28/on-naming/
+=Theo:= /@sinasamavati "as long as I’m not working alone, I’m more than willing to lay aside my preferences for the greater good of the team/
+=Theo:= /@sinasamavati I must say that quote sums it up for me. I agree with most in the article. The greek letter reference is way of in my book./
+=Theo:= /@sinasamavati so I'm with @adibolb on naming./
+=@sinasamavati= /@TheoAndersen I feel really annoyed when I have to write/read long names. but yeah, that quote explains something./
+=Theo:= /@sinasamavati i agree that names shouldn't be in the way. But names shouldn't be too esoteric - it makes it very hard to 'get' others code./
+=@sinasamavati= /@TheoAndersen Agreed/
+
+Reverse hungarian notation
+https://twitter.com/eed3si9n/status/244953689738059776
+s
+** Elixir - Why use elixir instead of erlang                                                                             
+** Using travic-Ci to build and run your config when you push to github                                                             
+Sådan at man kan se hvis der er konfigurationsfejl man ikke selv har fanget (treat warnings as errors on load)
+** Db - Base index layer on top of a relationel database (or any data?)
+** Db - Sql Server sp_who2 to find blocks                                                                                               
+Hvordan man via sp_who2 kan se hvad der blokerer for hvad.
+** Db - Why seemingly straightforward queries can default to table scan (clustered index scan) because of misaligned column types       
+Nem nem 3 vejs join med lav selectability som ikke virker fordi et index ikke bliver valgt (selv ikke det clustered index) da typerne er forskellige
+Char(10) versus nchar(10).. var svær at finde, men gav en kæmpe forskel..
+
+sp_tablehint.. eller hvad hed den nu?
+** Db - NoSQL - what a shitty name
+Tag udsnit stort set fra min rapport og forklar hvorfor nosql er et dårligt navn.. nonRel?
+** Db - RavenDB Architecture
+** Db - Document database modelling versus relational modelling
+Denormalisering i RavenDB versus normalisering i relationel databas
+** Db - Integration versus application databas
+
+** Db - Why its hard to refactor a databse.. (hvad var det nu for en fowler bog?)
+** DONE Db - About my professional master thesis on RavenDB (A case study of the document database RavenDB)
+About what i did, when i did it
+And what i found in a heli overview
+
+CLOSED: [2015-07-27 Mon 16:09]
+--> learning ruby on codeacademy to do the examples in ruby :)
+**
+* Idea´s for future posts
+
