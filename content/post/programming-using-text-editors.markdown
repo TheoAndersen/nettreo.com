@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2016-08-01T00:00:00Z
-image: /assets/emacs-open-project.gif
+image: assets/emacs-open-project.gif
 published: true
 title: Why program in a text editor
 url: /2016/08/01/programming-using-text-editors/

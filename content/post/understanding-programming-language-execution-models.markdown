@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2016-07-07T00:00:00Z
-image: /assets/executionmodel_actors.png
+image: assets/executionmodel_actors.png
 published: true
 title: Three programming language execution models
 url: /2016/07/07/understanding-programming-language-execution-models/
