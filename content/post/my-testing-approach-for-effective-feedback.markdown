@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2016-08-20T00:00:00Z
-image: /assets/hybrid_mobile_app_architecture.png
+image: assets/hybrid_mobile_app_architecture.png
 published: false
 title: Choosing testing approachs for effective feedback
 url: /2016/08/20/my-testing-approach-for-effective-feedback/

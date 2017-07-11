@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2016-07-23T00:00:00Z
-image: /assets/rewriting_history_rebase.png
+image: assets/rewriting_history_rebase.png
 published: true
 title: Refactoring your versioning history
 url: /2016/07/23/refactoring-your-versioning-history/

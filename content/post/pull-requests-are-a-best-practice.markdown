@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2016-06-17T00:00:00Z
-image: /assets/pull_request.png
+image: assets/pull_request.png
 published: true
 title: Pull requests are a best practice
 url: /2016/06/17/pull-requests-are-a-best-practice/

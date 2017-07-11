@@ -1,7 +1,7 @@
 ---
 comments: true
 date: 2016-10-04T00:00:00Z
-image: /assets/you_dont_need_to_see_my_nulls.png
+image: assets/you_dont_need_to_see_my_nulls.png
 published: true
 title: You dont need to see my nulls
 url: /2016/10/04/working-with-nulls-in-different-programming-languages/
